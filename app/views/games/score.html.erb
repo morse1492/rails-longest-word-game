@@ -1,0 +1,13 @@
+<h1>Result</h1>
+<% if @include%>
+  <%if @dictionary %>
+  <p><b>Congratulations!</b> <%=@upcase%> is a valid English word!</p>
+  <%else @result == false %>
+  <p>Sorry but <b><%=@upcase%></b> does not seem to be a valid English word...</p>
+  <%end%>
+<%else%>
+<p>Sorry but <b><%=@upcase%></b> can't be built out of <%=@letters.join(", ")%></p>
+<%end%>
+
+<a href="http://localhost:3000/new" class="link"> Play again</a>
+<%# <%= link_to "Play again", root_path %>
